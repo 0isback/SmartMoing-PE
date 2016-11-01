@@ -130,7 +130,8 @@ GuiPE.Widget.TextView = function () {
  * @since 2016.9.29
  */
 GuiPE.Widget.TextView.prototype = {
-    
+    constructor: GuiPE.Widget.TextView,
+
     /**
      * 텍스트를 설정합니다
      */
@@ -200,6 +201,8 @@ GuiPE.Widget.Button = function () {
  * @since 2016.9.29
  */
 GuiPE.Widget.Button.prototype = {
+    constructor: GuiPE.Widget.Button,
+
     /**
      * 텍스트를 설정합니다
      */
@@ -298,7 +301,8 @@ GuiPE.Widget.GUIButton = function () {
  * @since 2016.10.17
  */
 GuiPE.Widget.GUIButton.prototype = {
-    
+    constructor: GuiPE.Widget.GUIButton,
+
     /**
      * 비트맵을 설정합니다
      */
@@ -352,7 +356,8 @@ GuiPE.Widget.Toast = function () {
  * @since 2016.10.1
  */
 GuiPE.Widget.Toast.prototype = {
-    
+    constructor: GuiPE.Widget.Toast,
+
     /**
      * 텍스트를 설정합니다
      */
@@ -422,7 +427,8 @@ GuiPE.Widget.Switch = function () {
  * @since 2016.10.1
  */
 GuiPE.Widget.Switch.prototype = {
-    
+    constructor: GuiPE.Widget.Switch,
+
     /**
      * 스위치의 초기 꺼짐 켜짐을 조절합니다
      */
@@ -496,7 +502,8 @@ GuiPE.Widget.SeekBar = function () {
  * @since 2016.10.2
  */
 GuiPE.Widget.SeekBar.prototype = {
-    
+    constructor: GuiPE.Widget.SeekBar,
+
     /**
      * max 값을 설정합니다
      */
@@ -613,7 +620,8 @@ GuiPE.Widget.TopBar = function () {
  * @since 2016.10.5
  */
 GuiPE.Widget.TopBar.prototype = {
-    
+    constructor: GuiPE.Widget.TopBar,
+
     /**
      * 텍스트를 설정합니다
      */
@@ -700,7 +708,8 @@ GuiPE.Widget.Option = function () {
  * @since 2016.10.6
  */
 GuiPE.Widget.Option.prototype = {
-    
+    constructor: GuiPE.Widget.Option,
+
     /**
      * 타이틀을 설정합니다
      */
@@ -970,6 +979,8 @@ function createOptionTextLayout(text, color) {
  * @since 2016.10.8
  */
 createOptionTextLayout.prototype = {
+    constructor: createOptionTextLayout,
+
     getView : function () {
         return this.layout_text;
     },
@@ -1007,7 +1018,8 @@ GuiPE.Widget.CustomWindow = function () {
  * @since 2016.10.24
  */
 GuiPE.Widget.CustomWindow.prototype = {
-    
+    constructor: GuiPE.Widget.CustomWindow,
+
     /**
      * 타이틀을 설정합니다
      */
