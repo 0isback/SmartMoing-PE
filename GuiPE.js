@@ -2,23 +2,45 @@
  * GuiPE 객체입니다
  * @author 0isback (kimsg0220@naver.com)
  * @since 2016.7.5
+ * @namespace
  */
 var GuiPE = {};
 
 /**
  * 메인엑티비티의 Context 를 가져옵니다
+ * @memberOf GuiPE
  */
 GuiPE.getContext = function () {
     return com.mojang.minecraftpe.MainActivity.currentMainActivity.get();
 };
 
+/**
+ * @type {Number}
+ * @memberOf GuiPE
+ */
 GuiPE.DIP = android.util.TypedValue.COMPLEX_UNIT_DIP;
+
+/**
+ * @type {android.util.DisplayMetrics}
+ * @memberOf GuiPE
+ */
 GuiPE.METRICS = GuiPE.getContext().getResources().getDisplayMetrics();
+
+/**
+ * @type {Number}
+ * @memberOf GuiPE
+ */
 GuiPE.WIDTH = GuiPE.getContext().getScreenWidth();
+
+/**
+ * @type {Number}
+ * @memberOf GuiPE
+ */
 GuiPE.HEIGHT = GuiPE.getContext().getScreenHeight();
 
 /**
  * 커스텀 DP 값을 가져옵니다
+ * @memberOf GuiPE
  */
 GuiPE.DP = function (dip, dips) {
     var dp = android.util.TypedValue.applyDimension(
@@ -33,6 +55,7 @@ GuiPE.DP = function (dip, dips) {
 
 /**
  * UI 쓰레드 내에 함수를 실행합니다
+ * @memberOf GuiPE
  */
 GuiPE.uiThread = function (func) {
     GuiPE.getContext().runOnUiThread ( new java.lang.Runnable ( {
@@ -42,6 +65,7 @@ GuiPE.uiThread = function (func) {
 
 /**
  * 오류내용을 보여줍니다
+ * @memberOf GuiPE
  */
 GuiPE.Debug = function (e) {
     GuiPE.uiThread ( function () {
@@ -59,6 +83,7 @@ GuiPE.Debug = function (e) {
 
 /**
  * 마인크래프트 내장 이미지를 얻어옵니다
+ * @memberOf GuiPE
  */
 GuiPE.getImage = function (path) {
     return android.graphics.BitmapFactory.decodeStream(
@@ -67,6 +92,7 @@ GuiPE.getImage = function (path) {
 
 /**
  * 마인크래프트 아이템 이미지를 얻어옵니다
+ * @memberOf GuiPE
  */
 GuiPE.getItemImage = function () {
     //개발예정..
@@ -76,11 +102,15 @@ GuiPE.getItemImage = function () {
  * Widget 객체입니다
  * @author 0isback (kimsg0220@naver.com)
  * @since 2016.9.28
+ * @namespace Widget
+ * @memberOf GuiPE
  */
 GuiPE.Widget = {};
 
 /**
  * 마인크래프트 형식의 텍스트뷰를 생성합니다.
+ * @class
+ * @memberOf GuiPE.Widget
  */
 GuiPE.Widget.TextView = function () {
     this.main = new android.widget.ImageView(GuiPE.getContext());
@@ -144,6 +174,8 @@ GuiPE.Widget.TextView.prototype = {
 
 /**
  * 마인크래프트 형식의 버튼을 생성합니다.
+ * @class
+ * @memberOf GuiPE.Widget
  */
 GuiPE.Widget.Button = function () {
     this.main = new android.widget.ImageView(GuiPE.getContext());
@@ -252,6 +284,8 @@ GuiPE.Widget.Button.prototype = {
 
 /**
  * 마인크래프트 형식의 GUI 버튼을 생성합니다
+ * @class
+ * @memberOf GuiPE.Widget
  */
 GuiPE.Widget.GUIButton = function () {
     this.main = new android.widget.ImageView(GuiPE.getContext());
@@ -302,6 +336,8 @@ GuiPE.Widget.GUIButton.prototype = {
 
 /**
  * 마인크래프트 형식의 토스트를 생성합니다
+ * @class
+ * @memberOf GuiPE.Widget
  */
 GuiPE.Widget.Toast = function () {
     this.main = new android.widget.Toast(GuiPE.getContext());
@@ -365,6 +401,8 @@ GuiPE.Widget.Toast.prototype = {
 
 /**
  * 마인크래프트 형식의 스위치를 생성합니다.
+ * @class
+ * @memberOf GuiPE.Widget
  */
 GuiPE.Widget.Switch = function () {
     this.main = new android.widget.ToggleButton(GuiPE.getContext());
@@ -435,6 +473,8 @@ GuiPE.Widget.Switch.prototype = {
 
 /**
  * 마인크래프트 형식의 시크바를 생성합니다.
+ * @class
+ * @memberOf GuiPE.Widget
  */
 GuiPE.Widget.SeekBar = function () {
     this.main = new android.widget.SeekBar(GuiPE.getContext());
@@ -553,6 +593,8 @@ GuiPE.Widget.SeekBar.prototype = {
 
 /**
  * 마인크래프트 형식의 탑바를 생성합니다.
+ * @class
+ * @memberOf GuiPE.Widget
  */
 GuiPE.Widget.TopBar = function () {
     this.main = new android.widget.FrameLayout(GuiPE.getContext());
@@ -614,6 +656,8 @@ GuiPE.Widget.TopBar.prototype = {
 
 /**
  * 마인크래프트 형식의 이미지 토글을 생성합니다
+ * @class
+ * @memberOf GuiPE.Widget
  */
 GuiPE.Widget.ImageToggle = function () {
     var bt = new android.widget.ImageView(GuiPE.getContext());
@@ -626,6 +670,8 @@ GuiPE.Widget.ImageToggle = function () {
 
 /**
  * 마인크래프트 형식의 옵션창을 생성합니다
+ * @class
+ * @memberOf GuiPE.Widget
  */
 GuiPE.Widget.Option = function () {
     this.main = new android.widget.FrameLayout(GuiPE.getContext());
@@ -939,6 +985,8 @@ createOptionTextLayout.prototype = {
 
 /**
  * 마인크래프트 형식의 커스텀윈도우를 생성합니다
+ * @class
+ * @memberOf GuiPE.Widget
  */
 GuiPE.Widget.CustomWindow = function () {
     this.main = new android.widget.LinearLayout(GuiPE.getContext());
@@ -1072,14 +1120,28 @@ GuiPE.Widget.CustomWindow.prototype = {
 /**
  * Bitmap 객체입니다
  * @author 0isback (kimsg0220@naver.com)
+ * @namespace Bitmap
+ * @memberOf GuiPE
  */
 GuiPE.Bitmap = {
+    /**
+     * @type {android.graphics.Bitmap}
+     */
     sheet : GuiPE.getImage("images/gui/spritesheet.png"),
-        
+
+    /**
+     * @type {android.graphics.Bitmap}
+     */
     touchGUI : GuiPE.getImage("images/gui/touchgui.png"),
-        
+
+    /**
+     * @type {android.graphics.Bitmap}
+     */
     touchGUI2 : GuiPE.getImage("images/gui/touchgui2.png"),
-    
+
+    /**
+     * @type {android.graphics.Bitmap}
+     */
     GUI : GuiPE.getImage("images/gui/gui.png"),
     
     /**
@@ -1129,21 +1191,30 @@ GuiPE.Bitmap = {
  
         return GuiPE.Bitmap.createNinePatch(bit, GuiPE.DP(1, 4), GuiPE.DP(1, 4), GuiPE.DP(1, 12), GuiPE.DP(1, 14));
     },
-    
+
+    /**
+     * Bitmap Coding Style like SY
+     */
     PUSH : function () {
         var bitmap = android.graphics.Bitmap.createBitmap(GuiPE.Bitmap.sheet, 0, 32, 8, 8);
         var bit = android.graphics.Bitmap.createScaledBitmap(bitmap, GuiPE.DP(1, 16), GuiPE.DP(1, 16), false);
  
         return GuiPE.Bitmap.createNinePatch(bit, GuiPE.DP(1, 4), GuiPE.DP(1, 4), GuiPE.DP(1, 12), GuiPE.DP(1, 14));
     },
-    
+
+    /**
+     * Bitmap Coding Style like SY
+     */
     PANEL : function () {
         var bitmap = android.graphics.Bitmap.createBitmap(GuiPE.Bitmap.sheet, 34, 43, 14, 14);
         var bit = android.graphics.Bitmap.createScaledBitmap(bitmap, GuiPE.DP(1, 28), GuiPE.DP(1, 28), false);
  
         return GuiPE.Bitmap.createNinePatch(bit, GuiPE.DP(1, 4), GuiPE.DP(1, 4), GuiPE.DP(1, 12), GuiPE.DP(1, 14));
     },
-    
+
+    /**
+     * Bitmap Coding Style like SY
+     */
     SWITCH_ON : function () {
         var bitmap = android.graphics.Bitmap.createBitmap(GuiPE.Bitmap.touchGUI, 198, 206, 38, 19);
         var bit = android.graphics.Bitmap.createScaledBitmap(bitmap, GuiPE.DP(2, 38), GuiPE.DP(2, 19), false);
@@ -1151,20 +1222,29 @@ GuiPE.Bitmap = {
         return bit;
     },
 
+    /**
+     * Bitmap Coding Style like SY
+     */
     SWITCH_OFF: function () {
         var bitmap = android.graphics.Bitmap.createBitmap(GuiPE.Bitmap.touchGUI, 160, 206, 38, 19);
         var bit = android.graphics.Bitmap.createScaledBitmap(bitmap, GuiPE.DP(2, 38), GuiPE.DP(2, 19), false);
  
         return bit;
     },
-    
+
+    /**
+     * Bitmap Coding Style like SY
+     */
     SEEKBAR_THUMB : function () {
         var bitmap = android.graphics.Bitmap.createBitmap(GuiPE.Bitmap.touchGUI, 225, 125, 11, 17);
         var bit = android.graphics.Bitmap.createScaledBitmap(bitmap, GuiPE.DP(2, 33), GuiPE.DP(2, 51), false);
         
         return bit;
     },
-    
+
+    /**
+     * Bitmap Coding Style like SY
+     */
     TOPBAR : function () {
         var bitmap = android.graphics.Bitmap.createBitmap(GuiPE.Bitmap.touchGUI, 150, 26, 14, 30);
         
@@ -1189,7 +1269,10 @@ GuiPE.Bitmap = {
         return GuiPE.Bitmap.createNinePatch(bit, GuiPE.DP(1, 5), GuiPE.DP(1, 7), GuiPE.DP(1, 46), GuiPE.DP(1, 22));
     },
     
-    //by SY
+
+    /**
+     * By SY
+     */
     EditTextDrawable : function () {
         var O = android.graphics.Color.parseColor("#6B6163");
         var I = android.graphics.Color.parseColor("#393939");
@@ -1215,7 +1298,10 @@ GuiPE.Bitmap = {
         
         return GuiPE.Bitmap.createNinePatch(bitmap, GuiPE.DP(1, 6), GuiPE.DP(1, 6), GuiPE.DP(1, 18), GuiPE.DP(1, 18));
     },
-    
+
+    /**
+     * Bitmap Coding Style like SY
+     */
     LAYER :  function () {
         var bitmap = android.graphics.Bitmap.createBitmap(1, 1, android.graphics.Bitmap.Config.ARGB_8888);
         bitmap.setPixels([android.graphics.Color.parseColor("#30000000")], 0, 1, 0, 0, 1, 1);
@@ -1224,35 +1310,50 @@ GuiPE.Bitmap = {
 
         return bit;
     },
-    
+
+    /**
+     * Bitmap Coding Style like SY
+     */
     Jump : function () {
         var bitmap = android.graphics.Bitmap.createBitmap(GuiPE.Bitmap.GUI, 108, 111, 18, 18);
         var bit = android.graphics.Bitmap.createScaledBitmap(bitmap, GuiPE.DP(1, 36), GuiPE.DP(1, 36), false);
 
         return new android.graphics.drawable.BitmapDrawable(bit);
     },
-    
+
+    /**
+     * Bitmap Coding Style like SY
+     */
     DoubleJump : function () {
         var bitmap = android.graphics.Bitmap.createBitmap(GuiPE.Bitmap.GUI, 108, 137, 18, 18);
         var bit = android.graphics.Bitmap.createScaledBitmap(bitmap, GuiPE.DP(1, 36), GuiPE.DP(1, 36), false);
 
         return new android.graphics.drawable.BitmapDrawable(bit);
     },
-    
+
+    /**
+     * Bitmap Coding Style like SY
+     */
     FlyUp : function () {
         var bitmap = android.graphics.Bitmap.createBitmap(GuiPE.Bitmap.GUI, 56, 139, 18, 18);
         var bit = android.graphics.Bitmap.createScaledBitmap(bitmap, GuiPE.DP(1, 36), GuiPE.DP(1, 36), false);
 
         return new android.graphics.drawable.BitmapDrawable(bit);
     },
-    
+
+    /**
+     * Bitmap Coding Style like SY
+     */
     FlyDown : function () {
         var bitmap = android.graphics.Bitmap.createBitmap(GuiPE.Bitmap.GUI, 82, 135, 18, 18);
         var bit = android.graphics.Bitmap.createScaledBitmap(bitmap, GuiPE.DP(1, 36), GuiPE.DP(1, 36), false);
 
         return new android.graphics.drawable.BitmapDrawable(bit);
     },
-    
+
+    /**
+     * Bitmap Coding Style like SY
+     */
     TOOL : function () {
         var bitmap = android.graphics.Bitmap.createBitmap(GuiPE.Bitmap.touchGUI2, 134, 0, 28, 28);
         var bit = android.graphics.Bitmap.createScaledBitmap(bitmap, GuiPE.DP(1, 56), GuiPE.DP(1, 56), false);
@@ -1265,6 +1366,8 @@ GuiPE.Bitmap = {
 /**
  * View 객체입니다
  * @author 0isback (kimsg0220@naver.com)
+ * @namespace View
+ * @memberOf GuiPE
  */
 GuiPE.View = {};
 
@@ -1340,14 +1443,15 @@ GuiPE.View.close = function (element) {
 };
 
 
-/*
+/**
  * FontPE 객체입니다
  * @author Chan (gml1580@naver.com)
  * @modifier 0isback (kimsg0220@naver.com)
+ * @namespace FontPE
  */
 var FontPE = {};
 
-/*
+/**
  * FontPE 캐시파일 객체입니다
  */
 FontPE.cache = {};
