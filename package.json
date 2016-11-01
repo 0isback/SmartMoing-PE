@@ -1,0 +1,10 @@
+{
+    "name": "GuiPE",
+    "version": "1.0",
+    "description": "GuiPE",
+    "author": "0isback <kimsg0220@naver.com>",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/0isback/SmartMoing-PE.git"
+    }
+}
