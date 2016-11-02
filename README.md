@@ -1,11 +1,7 @@
 # SmartMoing-PE
 
-* Enable SmartMoving In MCPE!
-* 마인크래프트 포켓에디션에서도 스마트무빙을 사용하실 수 있습니다!
-
-* Need GuiPE Library To Use This Script
-* 이 스크립트를 사용하기 위해선 GuiPE 라이브러리가 필요합니다
-
+Enable SmartMoving In MCPE!
+Need GuiPE Library To Use This Script
 
 #License
 
