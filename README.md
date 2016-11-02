@@ -6,7 +6,7 @@ Need GuiPE Library To Use This Script
 
 #License
 
-(C) 2015 KD, PlanP(SSY), 0isback
+(C) 2016 0isback
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
