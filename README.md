@@ -1,15 +1,10 @@
 # SmartMoing-PE
 
-* @author PlanP, KD
-* @modify 0isback
-* @since 2015.8
-* 
-* 『 For A "PC Moving" in PE 』
-* 
-* Edit in PC : EditPlus
-* Edit in Mobile : DroidEdit
-* 
-* Update will be continued
+Enable SmartMoving In MCPE!
+마인크래프트 포켓에디션에서도 스마트무빙을 사용하실 수 있습니다!
+
+Need GuiPE Library To Use This Script
+이 스크립트를 사용하기 위해선 GuiPE 라이브러리가 필요합니다
 
 
 #License
